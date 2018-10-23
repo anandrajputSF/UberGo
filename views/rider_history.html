@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= Title %>
+    </title>
+    <% include ./partials/css %>
+    <% include ./partials/scripts %>
+</head>
+
+<body>
+    <% include ./partials/nav %>
+    <section id="section">
+        <div class="container">
+            <div class="row dataContainer">
+                <% include ./partials/sidenav %>
+                <aside class='dataSection'>
+                    <div class="dataHeading">
+                        <h2>My Rides</h2>
+                        <p></p>
+                    </div>
+                    <div class="rideData">
+                        <div class="row">
+                            
+                        <%if (rideHistory.length <= 0) { %>
+                            <div class="col-sm-12">
+                            <img id='imgNoRecord' src='../public/img/no-record.png'>
+                            <p>No rides found.</p>
+                        </div>
+                        <% }else{ %>
+                            <div class="col-md-6">
+                        <div id="tableView">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Distance</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Ride Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% JSON.parse(rideHistory).forEach(function(ride, index) { %>
+                                        <tr>
+                                            <td>
+                                                <%= index+1 %>
+                                            </td>
+                                            <td>
+                                                <%= ride.City[0].Name %>
+                                            </td>
+                                            <td>
+                                                <%= ride.Distance %>
+                                            </td>
+                                            <td>
+                                                <%= ride.Status %>
+                                            </td>
+                                            <td>
+                                                <%= moment(ride.RequestTime).format("Do MMM YYYY") %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="mapView">
+                            
+                            <% include ./partials/mapscripts %>
+                            <div id='map'></div>
+                        </div>
+                    </div>
+                    </div>
+
+                        <% } %>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <% include ./partials/footer %>
+</body>

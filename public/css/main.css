@@ -1,0 +1,8 @@
+body, html {font: 400 15px/1.8 "Roboto";color: #777;margin:0px;padding:0px;overflow: hidden;}
+.bgimg{padding:0px;height: 100%;width:100%;background: url('../img/background.jpg') no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+.logoName{font-size:60px;font-weight: bold;color:#ffcb0c;display: block;padding: 10px;}
+.logoImage{height:145px;width:180px;margin-bottom: 10px;}
+.caption {position: relative;top: 10%;width: 25%;text-align: center;color: #000;background: #ffffffb3;margin: 0 auto;padding: 50px 0;border:1px solid #ffcb0c;}
+.btnLogin{background:#000;color: #fff;font-weight: bold;font-size: 20px;padding:10px 30px;text-decoration: none;letter-spacing:2px;}
+.btnLogin:hover{color:#ffcb0c;}
+  

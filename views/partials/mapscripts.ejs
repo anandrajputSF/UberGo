@@ -1,0 +1,31 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCJQ0AEpsI0VQ-EFEixeF8OlADTMqUBrM"></script>
+<script>
+  function initialize() {
+    var rides = <%- rideHistory %>;
+    var myLatLng = {
+      lat: parseFloat(rides[0].City[0].Latitude),
+      lng: parseFloat(rides[0].City[0].Longitude)
+    };
+
+    var map_properties = {
+      center: myLatLng,
+      zoom: 6,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("map"), map_properties);
+    rides.forEach(ride => {
+      console.log(ride.City[0].Latitude);
+      var marker = new google.maps.Marker({
+        position: {
+          lat: parseFloat(ride.City[0].Latitude),
+          lng: parseFloat(ride.City[0].Longitude)
+        },
+        map: map,
+        title: ride.City.Name
+      });
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

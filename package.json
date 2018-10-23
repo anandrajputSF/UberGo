@@ -1,0 +1,23 @@
+{
+    "name": "UberGo",
+    "version": "1.0.0",
+    "dependencies": {
+        "async": "^2.6.1",
+        "body-parser": "^1.18.3",
+        "cookie-session": "^2.0.0-beta.3",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "express-ejs-layouts": "^2.5.0",
+        "fs": "0.0.1-security",
+        "moment": "^2.22.2",
+        "mongoose": "^5.3.4",
+        "morgan": "^1.9.1",
+        "node-uber": "^2.0.0",
+        "nodemon": "^1.18.4",
+        "path": "^0.12.7",
+        "request": "^2.88.0",
+        "serve-favicon": "^2.5.0",
+        "url": "^0.11.0",
+        "winston": "^3.1.0"
+    }
+}

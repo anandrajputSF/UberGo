@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= Title %>
+    </title>
+    <% include ./partials/css %>
+    <% include ./partials/scripts %>
+</head>
+<body>
+    <% include ./partials/nav %>
+    <section id="section">
+        <div class="container">
+            <div class="row dataContainer">
+                <% include ./partials/sidenav %>
+                <aside class='dataSection'>
+                    <div class="dataHeading">
+                        <h2>Profile</h2>
+                        <p></p>
+                    </div>
+                    <div class="profile">
+                        <aside class="pictureBox">
+                            <div class="profilePicture">
+                                <img src=<%= riderProfile.Picture %>>
+                            </div>
+                        </aside>
+                        <aside class="profileDetails">
+                            <h2><%= riderProfile.Name %></h2>
+                            <h4><i class="fas fa-envelope"></i> <%= riderProfile.Email %></h4>
+                            <h4><i class="fas fa-mobile-alt"></i> <%= riderProfile.MobileVerified %></h4>
+                        </aside>
+                    </div>
+                 </aside>
+            </div>
+        </div>
+    </section>
+    <% include ./partials/footer %>
+</body>
